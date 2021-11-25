@@ -1,0 +1,32 @@
+/*
+==================================================
+ESTILOS DE MI APLICACION
+==================================================
+*/
+
+body {
+  background-color: #ccc;
+}
+
+h2 {
+  color: #900;
+}
+
+p {
+  color: #009;
+  background-color: #ccc;
+}
+
+div {
+  background-color: #bbb;
+}
+
+/* SELECTOR IDENTIFICADOR */
+div#cabecera {
+  background-color: green;
+}
+
+/* SELECTOR CLASE */
+div.articulo {
+  color: sienna;
+}
