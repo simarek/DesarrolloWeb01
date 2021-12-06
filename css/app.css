@@ -4,29 +4,124 @@ ESTILOS DE MI APLICACION
 ==================================================
 */
 
+/*
+
+* {
+  padding: 10px 20px;
+  margin: 10px 20px 3px 25px;
+  border: 1px solid #009;
+}
+*/
+
+/************************************/
+
+/***********************************/
+
+@font-face {
+  font-family: "Ruso";
+  src: url("../fonts/RussoOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Quick";
+  src: url("../fonts/Quicksand-VariableFont_wght.ttf");
+}
+
+/* estilos con selectores de elemento*/
+
 body {
-  background-color: #ccc;
+  font-family: Quick;
+  font-size: 14px;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 5px;
 }
 
 h2 {
-  color: #900;
+  font-family: Ruso;
 }
 
-p {
-  color: #009;
+a {
+  color: #333;
+  transition: all 0.5s linear; /* tiempo de las trassisiones */
+}
+
+input,
+select,
+textarea,
+button,
+.btn {
+  font-family: Quick;
+  padding: 5px, 10px;
+  font-size: 1.5em;
+  margin: 7px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+button,
+.btn {
+  font-size: 1.1em;
+  margin: 10px 1px;
+  background-color: #eee;
+  border: 1px solid;
+}
+
+/* *otros selectores */
+.form-login label {
+  display: block;
+  color: white;
+}
+
+.form-login {
+  /* width: 50vw; */
+  border: 1px solid #666;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(3px);
+  text-align: center;
+  margin-top: 100px;
+}
+
+.form-login h2 {
+  font-family: Ruso;
+  color: white;
+  font-size: 2rem;
+}
+/*
+.contenedor1 {
+  display: block;
+  width: 100%;
+}
+
+.hijo1 {
+  display: inline;
+  float: left;
+  width: 40%;
   background-color: #ccc;
 }
 
-div {
-  background-color: #bbb;
+.contenedor2 {
+  display: block;
+  width: 100%;
+  border: 1px solid red;
 }
 
-/* SELECTOR IDENTIFICADOR */
-div#cabecera {
-  background-color: green;
+.hijo2 {
+  display: flex 1;
 }
 
-/* SELECTOR CLASE */
-div.articulo {
-  color: sienna;
+.contenedor3 {
+  width: 100vw;
+  height: 200px;
+  display: grid;
 }
+*/
