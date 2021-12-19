@@ -42,6 +42,7 @@ h4,
 h5,
 h6 {
   margin: 5px;
+  font-family: Ruso;
 }
 
 h2 {
@@ -50,7 +51,8 @@ h2 {
 
 a {
   color: #333;
-  transition: all 0.5s linear; /* tiempo de las trassisiones */
+  text-decoration: none;
+  transition: all 0.7s linear; /* tiempo de las trassisiones */
 }
 
 input,
@@ -71,10 +73,20 @@ button,
   font-size: 1.1em;
   margin: 10px 1px;
   background-color: #eee;
-  border: 1px solid;
+  border: 1px solid #ccc;
 }
 
-/* *otros selectores */
+.btn_oscuro {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn_oscuro:hover {
+  color: #eee;
+  background-color: #555;
+}
+
+/* Otros selectores */
 .form-login label {
   display: block;
   color: white;
@@ -95,6 +107,246 @@ button,
   font-family: Ruso;
   color: white;
   font-size: 2rem;
+}
+
+/*
+----------------
+PAGINA PRINCIPAL
+----------------
+*/
+
+.header {
+  display: grid;
+  grid-template-columns: 2fr 9fr 3fr;
+  height: 90px;
+  background-color: #333;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.header {
+  /* border: 1px solid #fff; */
+}
+
+.header .top_menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.top_menu li,
+.top_menu a {
+  display: block;
+  text-align: center;
+  height: 90px;
+  line-height: 90px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.top_menu a:hover {
+  background-color: #555;
+}
+
+.menu_logo {
+  width: 75%;
+  margin: 10px 20px;
+}
+
+.header .box_social {
+  display: block;
+  margin: 0;
+  text-align: center;
+}
+
+.box_social a {
+  color: #fff;
+  line-height: 90px;
+  font-size: 3em;
+  text-decoration: none;
+}
+
+.box_social a:hover {
+  color: #bbb;
+}
+
+/*
+-------------------
+BANNER DE LA PAGINA
+-------------------
+*/
+
+.banner {
+  height: 600px;
+  background-color: #eee;
+  background-image: url("../img/bg_index.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.banner h1 {
+  text-align: center;
+  font-size: 3em;
+}
+
+.banner p {
+  text-align: justify;
+  padding: 5px 20px;
+}
+
+.heading-developer {
+  font-family: Quick;
+  font-weight: bold;
+}
+
+/*
+-------------------
+CONTENEDOR TRABAJOS
+-------------------
+*/
+
+.ultimos_trabajos {
+  display: grid; /* calcula ancho de la pantalla*/
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px; /* Espaciado dentro del tempalte*/
+}
+
+.ultimos_trabajos .work_item {
+  padding: 10px;
+  margin: 0;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+}
+
+.ultimos_trabajos img {
+  width: 100%;
+  height: 260px;
+  overflow: hidden; /* corta la iamgen ocultandola*/
+}
+
+.ultimos_trabajos p {
+  text-align: justify;
+}
+
+.contenedor_proyectos {
+  margin: 10px;
+}
+
+.contenedor_proyectos h1 {
+  text-align: center;
+}
+
+/*
+------------------------
+CONTENEDOR PIE DE PAGINA
+------------------------
+*/
+
+.contenedor_pie {
+  background-image: url("../img/wall_login.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.contenedor_2filas {
+  background-color: rgba(30, 30, 30, 0.7);
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr 50px;
+  color: #fff;
+}
+
+.contenedor_listados {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 10px;
+}
+
+.contenedor_listados div {
+  margin: 10px;
+}
+
+.contenedor_listados h2 {
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 7px;
+  margin-bottom: 7px;
+}
+
+.listado_pie {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.listado_pie li,
+.listado_pie a {
+  display: block;
+  margin: 3px;
+}
+
+.listado_pie a {
+  padding: 10px;
+  background-color: rgba(80, 80, 80, 0.5);
+  border-left: 5px solid #777;
+  color: #fff;
+}
+
+.listado_pie a:hover {
+  border-left: 4px solid #444;
+  background-color: rgba(30, 30, 30, 0.8);
+  color: #ccc;
+}
+
+.pie {
+  text-align: center;
+  line-height: 50px;
+}
+
+/*
+----------------------------
+PORTAFOLIO
+----------------------------
+*/
+.item_portafolio {
+  display: grid;
+}
+
+.cols_2_1 {
+  grid-template-columns: 2fr 1fr;
+}
+
+.cols_1_2 {
+  grid-template-columns: 1fr 2fr;
+}
+
+.imagen_portafolio {
+  width: 100%;
+  overflow: hidden;
+}
+
+.descripcion_proyecto {
+  display: grid;
+  align-items: center;
+  padding: 0 30px;
+  text-align: center;
+}
+
+.bg_negro {
+  color: #fff;
+  background-color: #333;
 }
 /*
 .contenedor1 {
