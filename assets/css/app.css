@@ -126,10 +126,6 @@ PAGINA PRINCIPAL
   left: 0;
 }
 
-.header {
-  /* border: 1px solid #fff; */
-}
-
 .header .top_menu {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
