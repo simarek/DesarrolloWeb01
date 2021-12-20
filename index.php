@@ -1,7 +1,7 @@
 <?php
 
-requiere_once('config.php');
+require_once ('config.php');
 
-header("Locatioin: ".APP_URL.DEFAULT_PAGE);
+header("Location: ".APP_URL.DEFAULT_PAGE);
 
 ?>

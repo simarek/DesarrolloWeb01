@@ -4,8 +4,17 @@
 RUTA PRINCIPAL DE LA APLICACION
 ----------------------------------------------
 */
- 
+
 define('APP_URL','http://localhost/DesarrolloWeb101/');
+
+/*
+----------------------------------------------------
+PAGINA PRINCIPAL DEL BLOG REDIRECCIONADA DESDE
+EL "index.php" DE LA RAIZ DE LA CARPETA DE PROEYECTO
+----------------------------------------------------
+*/
+
+define('DEFAULT_PAGE','pages/inicio.php');
 
 /*
 ----------------------------------------------

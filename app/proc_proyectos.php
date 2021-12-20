@@ -2,7 +2,7 @@
 
 require_once('../modelos/articulo.php');
 
-// PROCESAR ARTICULOS
+// PROCESAR PROYECTOS
 // SE USARA LA VARIABLE GLOBAL SERVER
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){

@@ -1,53 +1,59 @@
 <?php
+
+// require_once PERMITE INCLUIR EL CODIGO DEL ARCHIVO PHP
 require_once('modelo.php');
 
-class articulo extends Modelo{
+class Articulo extends Modelo{
   private $id;
   private $nombre_tabla;
 
   /*
-  CONSTRUCTOR CONECTA A LA BD
+  CONSTRUCTOR
+  Description: Conecta a la base de datos
   */
 
   public function __construct(){
-    parent::__construct(); //cpnexxion a la base de datos
-    $this->id= 'art_id';
-    $this->nombr_tabla='articulo';
+    parent::__construct(); //conexion a la base de datos
+    $this->id = 'art_id';
+    $this->nombre_tabla ='articulo';
   }
 
-  // OBTENER TODOS LOS REGISTROS DE LA TABLA CATEGORIA
+  // METODO PARA OBTENER TODOS LOS REGISTROS DE LA TABLA CATEGORIA
   public function get_all(){
     $consulta = "SELECT * FROM $this->nombre_tabla";
-    $resutado = $this->de->query($consulta); // realizando la consulta a la BD
-    if(!$resultado){
+    $resultado = $this->db->query($consulta); // realizando la consulta a la BD
+    if(!$resultado){ // !true si hay error 
       echo "Error al listar los datos";
     }
     else{
-      return $resultado->fetch_all(MYSQLI_ASSOC);// array asociativo
+      return $resultado->fetch_all(MYSQLI_ASSOC);// objeto, array simple o "array asociativo"
+      // con asociativo devolvera tuplas de datos x[0]='cat_id'
       $resultado->close();
       $this->db->close();
     }  
   }
 
-  //obtener 1 registro de la tabla caegria cuyo id se envia por parametro
+  //OBTEBER UN REGISTRO DE LA TABALA CATEGORIA CUYO ID SE ENVIA POR PARAMETRO
   public function get($id){
-    $consulta = "SELECT * FROM $this->nombre_tabla where $this->id =".$id;
-    $resutado = $this->de->query($consulta); // realizando la consulta a la BD
+    $consulta = "SELECT * FROM $this->nombre_tabla WHERE $this->id =".$id;
+    $resultado = $this->db->query($consulta); // realizando la consulta a la BD
     if(!$resultado){
       echo "Error al obtener el elemento con ID";
     }
     else{
-      return $resultado->fetch_assoc();// array asociativo
+      return $resultado->fetch_assoc();// array asociativo: retorna una tupla o un registro
       $resultado->close();
       $this->db->close();
     }  
   }
 
-  // Guardar 1 regsitro en BD
-  // $data['cat_nombre']= "ALGORITMOS";
-  public function store($data){ // array[]
-    $consulta = "INSERT INTO $this->nombre_tabla ('art_titulo') value ('".$data['art_titulo']."')";
-    $resutado = $this->de->query($consulta); // realizando la consulta a la BD
+  // Guardar 1 registro en BD
+  // $data['cat_nombre'] = "ALGORITMOS"; ENTRA DESDE EL
+  // $data['cat_otro'] = algo
+  public function store($data){ // $data es un array[]
+
+    $consulta = "INSERT INTO $this->nombre_tabla (cat_nombre) VALUES ('".$data['cat_nombre']."');";
+    $resultado = $this->db->query($consulta); // retrone el resultado a la BD
     if(!$resultado){
       echo "Error al registrar datos";
     }
@@ -58,11 +64,10 @@ class articulo extends Modelo{
     }  
   }
 
-  // Actualizar Guardar 1 regsitro en BD
-  // $data['cat_nombre']= "ALGORITMOS"; // input
-  public function update($id, $data){ // array[]
-    $consulta = "UPDATE $this->nombre_tabla SET art_titulo = '".$data['art_titulo']."' WHERE $this_id = ".$id;
-    $resutado = $this->de->query($consulta); // realizando la consulta a la BD
+  // Actualizar un1 regsitro en BD
+  public function update($id, $data){ //id y array[] de datos
+    $consulta = "UPDATE $this->nombre_tabla SET cat_nombre = '".$data['cat_nombre']."' WHERE $this->id = ".$id;
+    $resultado = $this->db->query($consulta); // realizando la consulta a la BD
     if(!$resultado){
       echo "Error al actualizar datos";
     }
@@ -75,8 +80,8 @@ class articulo extends Modelo{
 
   // Borrar un rsgistro en BD
   public function delete($id){ // array[]
-    $consulta = "DELETE FROM $this->nombre_tabla WHERE $this_id = ".$id;
-    $resutado = $this->de->query($consulta); // realizando la consulta a la BD
+    $consulta = "DELETE FROM $this->nombre_tabla WHERE $this->id = ".$id;
+    $resultado = $this->db->query($consulta); // realizando la consulta a la BD
     if(!$resultado){
       echo "Error al eliminar datos";
     }
